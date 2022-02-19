@@ -8,10 +8,10 @@
             "name": "g++-11 - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build/main/myApp",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -27,7 +27,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++-11 build active file",
+            // "preLaunchTask": "C/C++: g++-11 build active file",
             "miDebuggerPath": "/home/linuxbrew/.linuxbrew/bin/gdb"
         }
     ]
