@@ -6,7 +6,7 @@
             "command": "mkdir",
             "args": [
                 "-p",
-                "${workspaceFolder}/build"
+                "${workspaceFolder}/build/debug"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -20,7 +20,7 @@
             "args": [
                 "-r",
                 "-f",
-                "${workspaceFolder}/build"
+                "${workspaceFolder}/build/debug"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -36,7 +36,7 @@
                 "${workspaceFolder}"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/build/debug"
             },
             "problemMatcher": [],
             "group": "build",
@@ -44,10 +44,10 @@
         },
         {
             "type": "shell",
-            "label": "Make All Targets",
+            "label": "Make All Targets Debug",
             "command": "make",
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/build/debug"
             },
             "problemMatcher": [
                 "$gcc"
@@ -63,7 +63,7 @@
             "dependsOn": [
                 "Create Debug Directory",
                 "Run CMake Debug",
-                "Make All Targets"
+                "Make All Targets Debug"
             ],
             "group": {
                 "isDefault": true,
@@ -79,12 +79,8 @@
                 "Clear Debug Directory",
                 "Create Debug Directory",
                 "Run CMake Debug",
-                "Make All Targets"
+                "Make All Targets Debug"
             ],
-            "group": {
-                "isDefault": true,
-                "kind": "build"
-            },
             "detail": "Removes the debug directory and runs CMake, Make",
         }
     ],
