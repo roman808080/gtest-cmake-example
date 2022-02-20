@@ -27,8 +27,8 @@
                     "ignoreFailures": true
                 }
             ],
-            // "preLaunchTask": "C/C++: g++-11 build active file",
-            "miDebuggerPath": "/home/linuxbrew/.linuxbrew/bin/gdb"
+            "preLaunchTask": "Build Debug",
+            "miDebuggerPath": "gdb"
         }
     ]
 }
