@@ -2,6 +2,19 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "Create Debug Directory",
+            "command": "mkdir",
+            "args": [
+                "-p",
+                "${workspaceFolder}/build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "Create the directory for build",
+        },
+        {
+            "type": "shell",
             "label": "Run CMake Debug",
             "command": "cmake",
             "args": [
@@ -11,8 +24,7 @@
             "options": {
                 "cwd": "${workspaceFolder}/build"
             },
-            "problemMatcher": [
-            ],
+            "problemMatcher": [],
             "group": "build",
             "detail": "Generates files for building by using CMake",
         },
@@ -35,6 +47,7 @@
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
+                "Create Debug Directory",
                 "Run CMake Debug",
                 "Make All Targets"
             ],
