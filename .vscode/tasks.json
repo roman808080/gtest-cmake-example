@@ -11,7 +11,21 @@
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "detail": "Create the directory for build",
+            "detail": "Creates the directory for the debug build",
+        },
+        {
+            "type": "shell",
+            "label": "Clear Debug Directory",
+            "command": "rm",
+            "args": [
+                "-r",
+                "-f",
+                "${workspaceFolder}/build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "Removes the debug directory",
         },
         {
             "type": "shell",
@@ -54,7 +68,24 @@
             "group": {
                 "isDefault": true,
                 "kind": "build"
-            }
+            },
+            "detail": "Runs CMake and Make",
+        },
+        {
+            "label": "Rebuild Debug",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Clear Debug Directory",
+                "Create Debug Directory",
+                "Run CMake Debug",
+                "Make All Targets"
+            ],
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            },
+            "detail": "Removes the debug directory and runs CMake, Make",
         }
     ],
     "version": "2.0.0"
