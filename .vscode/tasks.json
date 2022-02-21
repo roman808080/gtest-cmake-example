@@ -12,6 +12,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "detail": "Creates the directory for the debug build",
+            "problemMatcher": []
         },
         {
             "type": "shell",
@@ -26,6 +27,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "detail": "Removes the debug directory",
+            "problemMatcher": []
         },
         {
             "type": "shell",
@@ -38,7 +40,95 @@
             "options": {
                 "cwd": "${workspaceFolder}/build/debug"
             },
-            "problemMatcher": [],
+            "problemMatcher": [
+                {
+                    "owner": "cpp",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}/src"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+).*at\\s+(\\w.*):(\\d+)",
+                            "file": 2,
+                            "line": 3,
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+).*at\\s+(\\/.+):(\\d+)",
+                            "file": 2,
+                            "line": 3,
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+)",
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(\\/.+):(\\d+)",
+                            "file": 1,
+                            "line": 2
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}/src"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^\\s+(\\w.*):(\\d+)\\s+(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "message": 3
+                        }
+                    ]
+                }
+            ],
             "group": "build",
             "detail": "Generates files for building by using CMake",
         },
@@ -95,6 +185,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "detail": "Creates the directory for the release build",
+            "problemMatcher": []
         },
         {
             "type": "shell",
@@ -109,6 +200,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "detail": "Removes the release directory",
+            "problemMatcher": []
         },
         {
             "type": "shell",
@@ -120,7 +212,95 @@
             "options": {
                 "cwd": "${workspaceFolder}/build/release"
             },
-            "problemMatcher": [],
+            "problemMatcher": [
+                {
+                    "owner": "cpp",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+).*at\\s+(\\w.*):(\\d+)",
+                            "file": 2,
+                            "line": 3,
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+).*at\\s+(\\/.+):(\\d+)",
+                            "file": 2,
+                            "line": 3,
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "absolute"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^CMake\\s+(\\w+)",
+                            "severity": 1
+                        },
+                        {
+                            "regexp": "^(\\/.+):(\\d+)",
+                            "file": 1,
+                            "line": 2
+                        },
+                        {
+                            "regexp": "^(.+)$",
+                            "message": 1
+                        }
+                    ]
+                },
+                {
+                    "owner": "cmake",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^\\s+(\\w.*):(\\d+)\\s+(.+)$",
+                            "file": 1,
+                            "line": 2,
+                            "message": 3
+                        }
+                    ]
+                }
+            ],
             "group": "build",
             "detail": "Generates files for building by using CMake",
         },
